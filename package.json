@@ -1,0 +1,31 @@
+{
+  "name": "express-metatag",
+  "version": "0.0.0",
+  "description": "ExpressJS meta tags injection middleware",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "~1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flovilmart/express-metatag.git"
+  },
+  "keywords": [
+    "expressjs",
+    "meta",
+    "tag",
+    "opengraph",
+    "twitter",
+    "card"
+  ],
+  "author": "Florent Vilmart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flovilmart/express-metatag/issues"
+  },
+  "homepage": "https://github.com/flovilmart/express-metatag"
+}
