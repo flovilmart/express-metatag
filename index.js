@@ -8,7 +8,7 @@ var buildTags = function(metas, prefix,ignorePrefix) {
         var keys = Object.keys(link);
         for (var j in keys) {
             var key = keys[j];
-            tags += '<meta property="'+ prefix + key + '" content="' + link[key] + '">\n';
+            tags += '<meta name="'+ prefix + key + '" content="' + link[key] + '">\n';
         }
         return tags;
     }
