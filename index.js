@@ -23,8 +23,10 @@ var Meta = function(prefix, ignorePrefix){
     return function(platforms) {
         return function(req, res, next) {
             res._metas = res._metas || {};
-            if (_.isFunction(platforms)) {
-                platforms = platforms(req, res);
+            if (_.isFunction(originalPlatforms)) {
+                platforms = originalPlatforms(req, res);
+            } else {
+                platforms = originalPlatforms;
             }
             if (!_.isArray(platforms)) {
                 platforms = [ platforms ];
