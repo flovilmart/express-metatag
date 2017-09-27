@@ -20,8 +20,9 @@ var injectMetaOptions = function(str, options, prefix,ignorePrefix) {
 
 var Meta = function(prefix, ignorePrefix){
 
-    return function(platforms) {
+    return function(originalPlatforms) {
         return function(req, res, next) {
+            var platforms = [];
             res._metas = res._metas || {};
             if (_.isFunction(originalPlatforms)) {
                 platforms = originalPlatforms(req, res);
