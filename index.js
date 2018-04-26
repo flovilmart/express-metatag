@@ -8,7 +8,7 @@ var buildTags = function(metas, prefix,ignorePrefix) {
         var keys = Object.keys(link);
         for (var j in keys) {
             var key = keys[j];
-            tags += '<meta property="'+ prefix + key + '" content="' + link[key] + '">\n';
+            tags += '<meta name="'+ prefix + key + '" content="' + link[key] + '">\n';
         }
         return tags;
     }
@@ -20,11 +20,14 @@ var injectMetaOptions = function(str, options, prefix,ignorePrefix) {
 
 var Meta = function(prefix, ignorePrefix){
 
-    return function(platforms) {
+    return function(originalPlatforms) {
         return function(req, res, next) {
+            var platforms = [];
             res._metas = res._metas || {};
-            if (_.isFunction(platforms)) {
-                platforms = platforms(req, res);
+            if (_.isFunction(originalPlatforms)) {
+                platforms = originalPlatforms(req, res);
+            } else {
+                platforms = originalPlatforms;
             }
             if (!_.isArray(platforms)) {
                 platforms = [ platforms ];
